@@ -42,7 +42,7 @@ ALMA_LOCAL_NAME="AlmaLinux-${ALMA_RELEASE}-${ALMA_ARCH}-${ALMA_FLAVOR}.iso"
 ALMA_LOCAL="${ALMA_LOCAL_DIR}/${ALMA_LOCAL_NAME}"
 
 # Information regarding the ISO patch to apply
-PATH_PRODUCT="${WORKDIR_DIR}/product"
+PATH_PRODUCT="${WORKING_DIR}/product"
 PATH_KICKSTARTS="${WORKING_DIR}/kickstarts"
 PATH_KICKSTART_MAIN="${NEW_ISO_ROOT}/kickstart.ks"
 PATH_KICKSTART_HARD="${NEW_ISO_ROOT}/hardening.ks"
@@ -192,8 +192,8 @@ fi
 
 # Build product.img
 echo -n -e "${TEXT_INFO} Building product.img"
-pushd ${PATH_PRODUCT}
-find . | cpio -c -o | gzip -9cv > ${NEW_ISO_ROOT}/images/product.img
+pushd ${PATH_PRODUCT} &>> ${LOGFILE}
+find . | cpio -c -o --quiet | gzip -9cv > ${NEW_ISO_ROOT}/images/product.img
 if [ $? -ne 0 ]; then
         echo -n 0e "${LINE_RESET}"
         echo -e "${TEXT_FAIL} Failed to build product.img"
@@ -203,7 +203,7 @@ else
         echo -n -e "${LINE_RESET}"
         echo -e "${TEXT_SUCC} Built product.img"
 fi
-popd
+popd &>> ${LOGFILE}
 
 
 
