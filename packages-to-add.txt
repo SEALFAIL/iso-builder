@@ -1,0 +1,17 @@
+scap-security-guide
+GConf2
+openscap
+openscap-scanner
+xmlsec1
+xmlsec1-openssl
+aide
+rsyslog
+rsyslog-gnutls
+libestr
+openssh-server
+libfastjson
+dnf-automatic
+xml-common
+libxslt
+libtool-ltdl
+authselect-compat
