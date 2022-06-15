@@ -93,10 +93,11 @@ infobar.error {
 @define-color redhat #2d2d2d;
 @define-color fedora #2f4265;
 @define-color almalinux #0b2335;
+@define-color sealfail #b7cad8;
 
 /* theme colors/images */
 
-@define-color product_bg_color @almalinux;
+@define-color product_bg_color @sealfail;
 
 /* logo and sidebar classes */
 
