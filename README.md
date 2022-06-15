@@ -22,6 +22,18 @@ Run the script. You might want to run it as root if you can't use `mktemp`.
 
 The resulting image will be generated in the `build` directory, along with its SHA256 checksum.
 
+## Repository structure
+
+```
+./iso-builder
+	iso-patch
+		... Files to copy at the root of the to-be-built ISO image
+	kickstarts
+		... Anaconda kickstarts to run during installation
+	product
+		... Files necessary to build a SEALFAIL product.img file
+```
+
 ## Contributing
 
 Refer to the SEALFAIL project [documentation repository](https://github.com/SEALFAIL/Documentation) for information regarding contributions.
