@@ -102,7 +102,7 @@ echo '  \__ \/ __/ / /| | / /   / /_  / /| |  / // /  '
 echo ' ___/ / /___/ ___ |/ /___/ __/ / ___ |_/ // /___'
 echo '/____/_____/_/  |_/_____/_/   /_/  |_/___/_____/'
 echo ' '
-echo "=> Builds a SEALFAIL installation ISO from AlmaLinux 8.6"
+echo "=> Builds a SEALFAIL installation ISO from AlmaLinux ${ALMA_RELEASE}"
 echo "=> AlmaLinux: https://almalinux.org/"
 echo ' '
 
