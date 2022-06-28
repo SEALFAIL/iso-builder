@@ -24,7 +24,7 @@ TEXT_SUCC="[  ${TEXT_GREEN}OK${TEXT_RESET}  ]"
 
 # Information regarding the upstream AlmaLinux ISO
 ALMA_MIRROR="http://mirror.rackspeed.de" #Set it to whichever you want
-ALMA_RELEASE="8.6"
+ALMA_RELEASE="9.0"
 ALMA_ARCH="x86_64"
 ALMA_FLAVOR="minimal" #Can be either "minimal", "dvd", or "boot"
 ALMA_URL="${ALMA_MIRROR}/almalinux/${ALMA_RELEASE}/isos/${ALMA_ARCH}/AlmaLinux-${ALMA_RELEASE}-${ALMA_ARCH}-${ALMA_FLAVOR}.iso"

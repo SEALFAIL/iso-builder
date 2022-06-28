@@ -4,7 +4,7 @@
 
 This repository contains the necessary scripts and data to build an ISO-format SEALFAIL installation image.
 
-The script has been tested on **Alma Linux 8.6**
+The script has been tested on **Alma Linux 9.0**
 
 ## Dependencies
 

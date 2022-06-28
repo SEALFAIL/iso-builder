@@ -1,6 +1,6 @@
 [Main]
 Product=SEALFAIL
-Version=8.6
+Version=9.0
 BugURL=https://sealfail.org
 IsFinal=True
 UUID=202007011344.x86_64
