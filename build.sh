@@ -56,9 +56,9 @@ PACKAGES_TO_ADD=`cat packages-to-add.txt`
 TARGET_BLOCK_DEVICE="sda" # Use vda if you're deploying on a VM with virtio storage
 
 # OpenSCAP / Compliance As Code (CAC) profile to apply
-SCAP_CONTENT="/usr/share/xml/scap/ssg/content/ssg-almalinux8-ds.xml"
-SCAP_ID_DATASTREAM="scap_org.open-scap_datastream_from_xccdf_ssg-almalinux8-xccdf-1.2.xml"
-SCAP_ID_XCCDF="scap_org.open-scap_cref_ssg-almalinux8-xccdf-1.2.xml"
+SCAP_CONTENT="/usr/share/xml/scap/ssg/content/ssg-almalinux9-ds.xml"
+SCAP_ID_DATASTREAM="scap_org.open-scap_datastream_from_xccdf_ssg-almalinux9-xccdf-1.2.xml"
+SCAP_ID_XCCDF="scap_org.open-scap_cref_ssg-almalinux9-xccdf-1.2.xml"
 SCAP_PROFILE="xccdf_org.ssgproject.content_profile_stig_gui"
 
 # Information regarding the to-be-built ISO

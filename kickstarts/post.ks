@@ -3,13 +3,13 @@
 
 # Set the TTY banner
 echo '' > /etc/issue
-echo '     ___    __                __    _                 ' >> /etc/issue
-echo '    /   |  / /___ ___  ____ _/ /   (_)___  __  ___  __' >> /etc/issue
-echo '   / /| | / / __ `__ \/ __ `/ /   / / __ \/ / / / |/_/' >> /etc/issue
-echo '  / ___ |/ / / / / / / /_/ / /___/ / / / / /_/ />  <  ' >> /etc/issue
-echo ' /_/  |_/_/_/ /_/ /_/\__,_/_____/_/_/ /_/\__,_/_/|_|  ' >> /etc/issue
-echo '   ANSSI-BP-028 COMPLIANT'                              >> /etc/issue
-echo ''                                                       >> /etc/issue
+echo '   _____ _________    __    _________    ______ ' >> /etc/issue
+echo '  / ___// ____/   |  / /   / ____/   |  /  _/ / ' >> /etc/issue
+echo '  \__ \/ __/ / /| | / /   / /_  / /| |  / // /  ' >> /etc/issue
+echo ' ___/ / /___/ ___ |/ /___/ __/ / ___ |_/ // /___' >> /etc/issue
+echo '/____/_____/_/  |_/_____/_/   /_/  |_/___/_____/' >> /etc/issue
+echo ' Version 9.0'                                     >> /etc/issue
+echo ''                                                 >> /etc/issue
 
 # Set the SSH and cockpit banners
 sed -i 's/#Banner none/Banner \/etc\/issue/g'
