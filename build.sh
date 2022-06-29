@@ -26,7 +26,7 @@ TEXT_SUCC="[  ${TEXT_GREEN}OK${TEXT_RESET}  ]"
 ALMA_MIRROR="http://mirror.rackspeed.de" #Set it to whichever you want
 ALMA_RELEASE="9.0"
 ALMA_ARCH="x86_64"
-ALMA_FLAVOR="minimal" #Can be either "minimal", "dvd", or "boot"
+ALMA_FLAVOR="dvd" #Can be either "minimal", "dvd", or "boot"
 ALMA_URL="${ALMA_MIRROR}/almalinux/${ALMA_RELEASE}/isos/${ALMA_ARCH}/AlmaLinux-${ALMA_RELEASE}-${ALMA_ARCH}-${ALMA_FLAVOR}.iso"
 
 # Build information
@@ -57,8 +57,6 @@ TARGET_BLOCK_DEVICE="sda" # Use vda if you're deploying on a VM with virtio stor
 
 # OpenSCAP / Compliance As Code (CAC) profile to apply
 SCAP_CONTENT="/usr/share/xml/scap/ssg/content/ssg-almalinux9-ds.xml"
-SCAP_ID_DATASTREAM="scap_org.open-scap_datastream_from_xccdf_ssg-almalinux9-xccdf-1.2.xml"
-SCAP_ID_XCCDF="scap_org.open-scap_cref_ssg-almalinux9-xccdf-1.2.xml"
 SCAP_PROFILE="xccdf_org.ssgproject.content_profile_stig_gui"
 
 # Information regarding the to-be-built ISO
@@ -235,13 +233,6 @@ echo -e "${TEXT_INFO} Starting kickstart configuration..."
 # Configure the main kickstart
 sed -i "s/%TARGET_BLOCK_DEVICE%/${TARGET_BLOCK_DEVICE}/g" ${PATH_KICKSTART_MAIN}
 echo -e "${TEXT_SUCC} => Configured the main kickstart"
-
-# Configure the OpenSCAP kickstart
-sed -i "s/%SCAP_PROFILE%/${SCAP_PROFILE}/g" ${PATH_KICKSTART_SCAP}
-sed -i "s|%SCAP_CONTENT%|${SCAP_CONTENT}|g" ${PATH_KICKSTART_SCAP}
-sed -i "s/%SCAP_ID_DATASTREAM%/${SCAP_ID_DATASTREAM}/g" ${PATH_KICKSTART_SCAP}
-sed -i "s/%SCAP_ID_XCCDF%/${SCAP_ID_XCCDF}/g" ${PATH_KICKSTART_SCAP}
-echo -e "${TEXT_SUCC} => Configured the OpenSCAP kickstart"
 
 # Configure the hardening kickstart
 sed -i "s/%SCAP_PROFILE%/${SCAP_PROFILE}/g" ${PATH_KICKSTART_HARD}

@@ -14,13 +14,14 @@ echo ''                                                 >> /etc/issue
 # Set the SSH and cockpit banners
 sed -i 's/#Banner none/Banner \/etc\/issue/g'
 cp /etc/issue /etc/issue.cockpit
+cp /etc/issue /etc/banner
 
 # Remove the cockpit message
 rm -f /etc/motd.d/cockpit
 rm -f /etc/issue.d/cockpit
 
-# Enable the following services
-systemctl enable sshd
-systemctl enable cockpit.socket
+# Disable the following services
+systemctl disable sshd
+systemctl disable cockpit.socket
 
 %end

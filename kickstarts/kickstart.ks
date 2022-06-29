@@ -20,12 +20,11 @@ authselect --passalgo=sha512 --useshadow
 selinux --enforcing
 
 # Configure kdump
-%addon com_redhat_kdump --enable --reserve-mb=auto
+%addon com_redhat_kdump --disable
 %end
 
 # Enable DHCP, set hostname
-# Allow SSH and Cockpit
-network  --bootproto=dhcp --device=enp0s3 --onboot=on --activate --hostname=alma.lan
+network  --bootproto=dhcp --device=enp0s3 --onboot=on --activate --hostname=sealfail.lan
 
 # Set up the partitions
 %include /mnt/install/repo/partitioning.ks
@@ -35,9 +34,6 @@ network  --bootproto=dhcp --device=enp0s3 --onboot=on --activate --hostname=alma
 
 # Package selection
 %include /mnt/install/repo/packages.ks
-
-## OpenSCAP hardening
-#%include /mnt/install/repo/openscap.ks
 
 # Hardening post-install script
 %include /mnt/install/repo/hardening.ks
