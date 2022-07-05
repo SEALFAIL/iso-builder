@@ -53,7 +53,7 @@ PATH_KICKSTART_POST="${NEW_ISO_ROOT}/post.ks"
 PATH_KICKSTART_USER="${NEW_ISO_ROOT}/users.ks"
 PATH_REPO="${NEW_ISO_ROOT}/ondisk"
 PACKAGES_TO_ADD=`cat packages-to-add.txt`
-TARGET_BLOCK_DEVICE="sda" # Use vda if you're deploying on a VM with virtio storage
+TARGET_BLOCK_DEVICE="sda"
 
 # OpenSCAP / Compliance As Code (CAC) profile to apply
 SCAP_CONTENT="/usr/share/xml/scap/ssg/content/ssg-almalinux9-ds.xml"
@@ -205,12 +205,6 @@ popd &>> ${LOGFILE}
 
 
 
-####
-#### KICKSTARTS
-####
-
-
-
 # Copy the kickstarts
 echo -n -e "${TEXT_INFO} Installing the kickstarts..."
 cp -r ${PATH_KICKSTARTS}/*.ks ${NEW_ISO_ROOT}/
@@ -227,7 +221,6 @@ fi
 
 
 # Configure the kickstarts
-
 echo -e "${TEXT_INFO} Starting kickstart configuration..."
 
 # Configure the main kickstart
@@ -263,6 +256,9 @@ echo -e "${TEXT_SUCC} Configured ISOLINUX"
 sed -i "s/%NEW_ISO_LABEL%/${NEW_ISO_LABEL}/g" ${NEW_ISO_ROOT}/EFI/BOOT/grub.cfg
 sed -i "s/%PATH_KICKSTART_MAIN%/kickstart.ks/g" ${NEW_ISO_ROOT}/EFI/BOOT/grub.cfg
 sed -i "s/%ALMA_VERSION%/${ALMA_RELEASE}/g" ${NEW_ISO_ROOT}/EFI/BOOT/grub.cfg
+sed -i "s/%NEW_ISO_LABEL%/${NEW_ISO_LABEL}/g" ${NEW_ISO_ROOT}/EFI/BOOT/BOOT.conf
+sed -i "s/%PATH_KICKSTART_MAIN%/kickstart.ks/g" ${NEW_ISO_ROOT}/EFI/BOOT/BOOT.conf
+sed -i "s/%ALMA_VERSION%/${ALMA_RELEASE}/g" ${NEW_ISO_ROOT}/EFI/BOOT/BOOT.conf
 echo -e "${TEXT_SUCC} Configured GRUB2"
 
 
