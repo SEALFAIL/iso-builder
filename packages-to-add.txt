@@ -1,1 +1,2 @@
+epel-release
 authselect-compat

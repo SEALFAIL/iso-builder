@@ -4,4 +4,5 @@ repo --name=ondisk --baseurl=file:///run/install/repo/ondisk
 @^Workstation
 scap-security-guide
 authselect-compat
+epel-release
 %end
