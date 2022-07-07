@@ -1,2 +1,2 @@
-epel-release
+scap-security-guide
 authselect-compat

@@ -23,8 +23,8 @@ selinux --enforcing
 %addon com_redhat_kdump --disable
 %end
 
-# Enable DHCP, set hostname
-network  --bootproto=dhcp --device=enp0s3 --onboot=on --activate --hostname=sealfail.lan
+# Disable networking, set hostname
+network  --no-activate --hostname=sealfail
 
 # Set up the partitions
 %include /mnt/install/repo/partitioning.ks
