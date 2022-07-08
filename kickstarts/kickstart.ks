@@ -1,6 +1,6 @@
 # Install locally, with GUI
 graphical
-cdrom
+url --url=file:///run/install/repo/BaseOS
 
 # GRUB2 configuration
 bootloader --boot-drive=%TARGET_BLOCK_DEVICE% --timeout=0 --append="rhgb quiet"
@@ -25,6 +25,9 @@ selinux --enforcing
 
 # Disable networking, set hostname
 network  --no-activate --hostname=sealfail
+
+# OpenSCAP hardening
+%include /mnt/install/repo/openscap.ks
 
 # Set up the partitions
 %include /mnt/install/repo/partitioning.ks
