@@ -26,9 +26,6 @@ selinux --enforcing
 # Disable networking, set hostname
 network  --no-activate --hostname=sealfail
 
-# Harden with OpenSCAP
-%include /mnt/install/repo/openscap.ks
-
 # Set up the partitions
 %include /mnt/install/repo/partitioning.ks
 

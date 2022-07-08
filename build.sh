@@ -227,11 +227,6 @@ echo -e "${TEXT_INFO} Starting kickstart configuration..."
 sed -i "s/%TARGET_BLOCK_DEVICE%/${TARGET_BLOCK_DEVICE}/g" ${PATH_KICKSTART_MAIN}
 echo -e "${TEXT_SUCC} => Configured the main kickstart"
 
-# Configure the OpenSCAP kickstart
-sed -i "s/%SCAP_PROFILE%/${SCAP_PROFILE}/g" ${PATH_KICKSTART_SCAP}
-sed -i "s|%SCAP_CONTENT%|${SCAP_CONTENT}|g" ${PATH_KICKSTART_SCAP}
-echo -e "${TEXT_SUCC} => Configured the OpenSCAP kickstart"
-
 # Configure the hardening kickstart
 sed -i "s/%SCAP_PROFILE%/${SCAP_PROFILE}/g" ${PATH_KICKSTART_HARD}
 sed -i "s|%SCAP_CONTENT%|${SCAP_CONTENT}|g" ${PATH_KICKSTART_HARD}
