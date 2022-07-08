@@ -227,6 +227,11 @@ echo -e "${TEXT_INFO} Starting kickstart configuration..."
 sed -i "s/%TARGET_BLOCK_DEVICE%/${TARGET_BLOCK_DEVICE}/g" ${PATH_KICKSTART_MAIN}
 echo -e "${TEXT_SUCC} => Configured the main kickstart"
 
+# Configure the OpenSCAP kickstart
+sed -i "s/%SCAP_PROFILE%/${SCAP_PROFILE}/g" ${PATH_KICKSTART_SCAP}
+sed -i "s|%SCAP_CONTENT%|${SCAP_CONTENT}|g" ${PATH_KICKSTART_SCAP}
+echo -e "${TEXT_SUCC} => Configured the OpenSCAP kickstart"
+
 # Configure the hardening kickstart
 sed -i "s/%SCAP_PROFILE%/${SCAP_PROFILE}/g" ${PATH_KICKSTART_HARD}
 sed -i "s|%SCAP_CONTENT%|${SCAP_CONTENT}|g" ${PATH_KICKSTART_HARD}
@@ -245,6 +250,7 @@ echo -e "${TEXT_SUCC} Configured all kickstarts"
 sed -i "s/%NEW_ISO_LABEL%/${NEW_ISO_LABEL}/g" ${NEW_ISO_ROOT}/isolinux/isolinux.cfg
 sed -i "s/%PATH_KICKSTART_MAIN%/kickstart.ks/g" ${NEW_ISO_ROOT}/isolinux/isolinux.cfg
 sed -i "s/%ALMA_VERSION%/${ALMA_RELEASE}/g" ${NEW_ISO_ROOT}/isolinux/isolinux.cfg
+
 sed -i "s/%NEW_ISO_LABEL%/${NEW_ISO_LABEL}/g" ${NEW_ISO_ROOT}/isolinux/grub.conf
 sed -i "s/%PATH_KICKSTART_MAIN%/kickstart.ks/g" ${NEW_ISO_ROOT}/isolinux/grub.conf
 sed -i "s/%ALMA_VERSION%/${ALMA_RELEASE}/g" ${NEW_ISO_ROOT}/isolinux/grub.conf
@@ -256,6 +262,7 @@ echo -e "${TEXT_SUCC} Configured ISOLINUX"
 sed -i "s/%NEW_ISO_LABEL%/${NEW_ISO_LABEL}/g" ${NEW_ISO_ROOT}/EFI/BOOT/grub.cfg
 sed -i "s/%PATH_KICKSTART_MAIN%/kickstart.ks/g" ${NEW_ISO_ROOT}/EFI/BOOT/grub.cfg
 sed -i "s/%ALMA_VERSION%/${ALMA_RELEASE}/g" ${NEW_ISO_ROOT}/EFI/BOOT/grub.cfg
+
 sed -i "s/%NEW_ISO_LABEL%/${NEW_ISO_LABEL}/g" ${NEW_ISO_ROOT}/EFI/BOOT/BOOT.conf
 sed -i "s/%PATH_KICKSTART_MAIN%/kickstart.ks/g" ${NEW_ISO_ROOT}/EFI/BOOT/BOOT.conf
 sed -i "s/%ALMA_VERSION%/${ALMA_RELEASE}/g" ${NEW_ISO_ROOT}/EFI/BOOT/BOOT.conf
