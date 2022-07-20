@@ -5,4 +5,7 @@ repo --name=AppStream	--baseurl=file:///run/install/repo/AppStream
 @^Workstation
 scap-security-guide
 authselect-compat
+clevis-dracut
+clevis-luks
+clevis-systemd
 %end
