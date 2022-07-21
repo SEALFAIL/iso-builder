@@ -7,4 +7,4 @@ part    swap 				--size=8192	--ondisk=%TARGET_BLOCK_DEVICE%
 part	/tmp		--fstype=tmpfs	--size=4096
 part	pv.01				--size=1	--ondisk=%TARGET_BLOCK_DEVICE% --grow
 volgroup sealfail pv.01
-logvol	/		--fstype=xfs	--size=16384	--ondisk=%TARGET_BLOCK_DEVICE% --grow --vgname=sealfail --name=root --encrypted --passphrase=temppass --luks-version=luks2
+logvol	/		--fstype=xfs	--size=16384 --grow --vgname=sealfail --name=root --encrypted --passphrase=temppass --luks-version=luks2
