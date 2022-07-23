@@ -4,8 +4,8 @@
 # Set clevis binding
 clevis luks bind -d /dev/sealfail/root tpm2 '{"pcr_bank":"sha256","pcr_ids":"0,1,7"}' <<< "temppass"
 clevis luks bind -d /dev/sealfail/swap tpm2 '{"pcr_bank":"sha256","pcr_ids":"0,1,7"}' <<< "temppass"
-cryptsetup luksRemoveKey /dev/sealfail/root <<< "temppass"
-cryptsetup luksRemoveKey /dev/sealfail/swap <<< "temppass"
+#cryptsetup luksRemoveKey /dev/sealfail/root <<< "temppass"
+#cryptsetup luksRemoveKey /dev/sealfail/swap <<< "temppass"
 dracut -fv --regenerate-all
 
 # Set the TTY banner
