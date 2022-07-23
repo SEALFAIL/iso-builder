@@ -1,8 +1,12 @@
 # Post-installation script
 %post --erroronfail
 
-# Mount the EFI partition
-mount /boot/efi
+# Set clevis binding
+clevis luks bind -d /dev/sealfail/root tpm2 '{"pcr_bank":"sha256","pcr_ids":"0,1,7"}' <<< "temppass"
+clevis luks bind -d /dev/sealfail/swap tpm2 '{"pcr_bank":"sha256","pcr_ids":"0,1,7"}' <<< "temppass"
+#cryptsetup luksRemoveKey /dev/sealfail/root <<< "temppass"
+#cryptsetup luksRemoveKey /dev/sealfail/swap <<< "temppass"
+dracut -fv --regenerate-all
 
 # I can't believe this one-liner is making it in prod
 # Sets a random GRUB2 password
