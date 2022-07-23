@@ -16,7 +16,7 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 # Disables automounting /boot/efi
 sed -i '/efi/ s/nodev/nodev,noauto/g' /etc/fstab
 
-# OpenSCAP run to reach DISA STIG GUI compliace
+# OpenSCAP run to reach compliance
 oscap xccdf eval --remediate --results /root/oscap.xml --profile %SCAP_PROFILE% %SCAP_CONTENT%
 oscap xccdf generate report /root/oscap.xml > /root/oscap.html
 rm /root/oscap.xml

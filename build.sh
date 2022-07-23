@@ -56,8 +56,8 @@ PACKAGES_TO_ADD=`cat packages-to-add.txt`
 TARGET_BLOCK_DEVICE="sda"
 
 # OpenSCAP / Compliance As Code (CAC) profile to apply
-SCAP_CONTENT="/usr/share/xml/scap/ssg/content/ssg-almalinux9-ds.xml"
-SCAP_PROFILE="xccdf_org.ssgproject.content_profile_stig_gui"
+SCAP_CONTENT="/usr/share/xml/scap/sealfail/sealfail.xml"
+SCAP_PROFILE="xccdf_org.sealfail_profile_workstation"
 
 # Information regarding the to-be-built ISO
 NEW_ISO_VERSION="${ALMA_RELEASE}"
