@@ -265,21 +265,6 @@ echo -e "${TEXT_SUCC} Configured GRUB2"
 
 
 
-# Create the on-disk repo
-echo -n -e "${TEXT_INFO} Creating the on-disk repo..."
-mkdir -p ${PATH_REPO}/Packages
-if [ $? -ne 0 ]; then
-        echo -n -e "${LINE_RESET}"
-        echo -e "${TEXT_FAIL} Couldn't create the on-disk repo"
-        rm -rf ${TMPDIR}
-        exit 255
-else
-        echo -n -e "${LINE_RESET}"
-        echo -e "${TEXT_SUCC} Created the on-disk repo"
-fi
-
-
-
 # Download the packages
 echo -n -e "${TEXT_INFO} Downloading the packages..."
 pushd ${PATH_REPO}/Packages &>> ${LOGFILE}
