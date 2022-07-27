@@ -9,4 +9,5 @@ sealfail-branding
 clevis-dracut
 clevis-luks
 clevis-systemd
+-almalinux-backgrounds
 %end
