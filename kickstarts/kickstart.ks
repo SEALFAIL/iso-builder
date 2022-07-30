@@ -23,6 +23,9 @@ selinux --enforcing
 %addon com_redhat_kdump --disable
 %end
 
+# Set up firewalld
+firewall --enabled
+
 # Disable networking, set hostname
 network  --no-activate --hostname=sealfail
 

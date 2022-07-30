@@ -9,4 +9,9 @@ sealfail-branding
 clevis-dracut
 clevis-luks
 clevis-systemd
+aide
+gnutls-utils
+nss-tools
+rng-tools
+tmux
 %end
