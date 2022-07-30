@@ -1,1 +1,6 @@
+aide
+gnutls-utils
+nss-tools
+rng-tools
+tmux
 scap-security-guide
