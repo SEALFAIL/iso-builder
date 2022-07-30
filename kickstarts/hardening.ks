@@ -16,7 +16,7 @@ sed -i '/efi/ s/defaults/nodev,noauto/g' /etc/fstab
 update-crypto-policies --set FUTURE
 
 # OpenSCAP run to reach compliance
-oscap xccdf eval --results /root/oscap.xml --profile %SCAP_PROFILE% %SCAP_CONTENT%
+oscap xccdf eval --remediate --results /root/oscap.xml --profile %SCAP_PROFILE% %SCAP_CONTENT%
 oscap xccdf generate report /root/oscap.xml > /root/oscap.html
 rm /root/oscap.xml
 
