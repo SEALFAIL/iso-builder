@@ -8,6 +8,9 @@ clevis luks bind -d /dev/sealfail/swap tpm2 '{"pcr_bank":"sha256","pcr_ids":"0,1
 #cryptsetup luksRemoveKey /dev/sealfail/swap <<< "temppass"
 dracut -fv --regenerate-all
 
+# Delay the Plymouth LUKS password prompt, let the TPM unlock the devices
+echo 'ExecStartPre=/bin/sleep 10' >> /usr/lib/systemd/system/systemd-ask-password-plymouth.service
+
 # Disables automounting /boot/efi
 sed 0u '/luks/ s/defaults/ro/g' /etc/fstab
 sed -i '/efi/ s/defaults/nodev,noauto/g' /etc/fstab
