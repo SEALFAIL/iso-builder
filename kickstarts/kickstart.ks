@@ -20,7 +20,7 @@ authselect --passalgo=sha512 --useshadow
 selinux --enforcing
 
 # Configure kdump
-%addon com_redhat_kdump --disable
+%addon com_redhat_kdump --enable
 %end
 
 # Set up firewalld
