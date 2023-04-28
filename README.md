@@ -14,11 +14,19 @@ The build process requires `createrepo`, `curl`, `xorriso` and `syslinux` from E
 
 `# dnf install xorriso syslinux createrepo curl`
 
+Alternatively, it can be built with Docker. Just ensure you have Docker running and the current user has the required permissions.
+
+## Building with Docker
+
+Simply run the following script:
+
+`$ ./dockerbuild.sh`
+
 ## Usage
 
 Run the script. You might want to run it as root if you can't use `mktemp`.
 
-`chmod +x build.sh && ./build.sh`
+`$ chmod +x build.sh && ./build.sh`
 
 The resulting image will be generated in the `build` directory, along with its SHA256 checksum.
 
