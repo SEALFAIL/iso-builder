@@ -1,5 +1,8 @@
 aide
+gnutls
+gnutls-dane
 gnutls-utils
+nss
 nss-tools
 rng-tools
 tmux
